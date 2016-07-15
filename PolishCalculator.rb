@@ -3,7 +3,7 @@ require 'stringio'
 require './ui'
 
 class PolishCalculator
-  attr_accessor :ui
+  attr_accessor :ui, :calculator_stack
   attr_reader :output, :user_input
 
   def initialize
@@ -12,7 +12,7 @@ class PolishCalculator
   end
 
   def start_calculator
-    @ui.give("Welcome to Julie's Reverse Polish Calculator!  Type 'c' to continue or 'q' to exit.")
+    @ui.give_welcome_message
     user_input = @ui.receive
     if user_input == 'c'
       enter_number_or_operation
@@ -130,17 +130,4 @@ class PolishCalculator
       enter_number_or_operation
     end
   end
-
 end
-
-RSpec.describe PolishCalculator do
-
-  describe "start_calculator" do
-    context 'when user inputs c' do
-      it 'should move onto the enter_number_or_operation method' do
-      end
-
-    end
-  end
-end
-
