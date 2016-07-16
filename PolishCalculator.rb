@@ -3,11 +3,11 @@ require 'stringio'
 require './ui'
 
 class PolishCalculator
-  attr_accessor :ui, :calculator_stack
+  attr_accessor :ui
   attr_reader :output, :user_input
 
-  def initialize
-    @calculator_stack = []
+  def initialize(calculator_stack = [])
+    @calculator_stack = calculator_stack
     @ui = UI.new
   end
 
@@ -34,7 +34,10 @@ class PolishCalculator
   end
 
   def check_length_and_characters(user_input)
-    if user_input.length > 5
+    if user_input.match('[.]')
+      @ui.give("This calculator is in Alpha version.  We're not accepting decimals quite yet.")
+      enter_number_or_operation
+    elsif user_input.length > 5
       @ui.give("You entered more than five digits.  Please enter less than five digits")
       enter_number_or_operation
     elsif user_input.match('[^0-9\+\-\*\/\.]')
