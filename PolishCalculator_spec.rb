@@ -12,9 +12,6 @@ RSpec.describe PolishCalculator do
     end
 
     context 'when user inputs more than five digits' do
-      it 'should show the appropriate message if length is greater than 5' do
-        # Pending
-      end
 
       it 'should call the enter_number_or_operation method' do
         @input = StringIO.new("123456")
@@ -25,9 +22,6 @@ RSpec.describe PolishCalculator do
     end
 
     context "when user doesn't enter a valid number or operator" do
-      it 'should show the appropriate message if invalid number or operator' do
-        # Pending
-      end
 
       it 'should call the enter_number_or_operation method' do
         @input = StringIO.new("abc")
@@ -128,87 +122,87 @@ RSpec.describe PolishCalculator do
 
   describe "print_results" do
     it "should print the total of the last operation and the updated stack to the console" do
-
+      # Pending
     end
   end
 
   describe "clean_up_stack" do
     it "should call the remove_last_two_elements_from_stack method" do
-
+      # Pending
     end
 
     it "should call the add_new_total_to_stack method" do
-
+      # Pending
     end
 
     it "should call the print_results method" do
-
+      # Pending
     end
   end
 
   describe "get_numbers_from_array" do
     it "should create an instance variable @second_number with the last element from the array" do
-
+      # Pending
     end
 
     it "should create an instance variable @first_number with the last element from the array" do
-
+      # Pending
     end
   end
 
   describe "do_math" do
     context "when the user enters a plus sign" do
       it "should add the two numbers together" do
-
+        # Pending
       end
 
       it "should call the clean_up_stack method" do
-
+        # Pending
       end
       it "should call the enter_number_or_operation method" do
-
+        # Pending
       end
     end
 
     context "when the user enters a minus" do
       it "should subtract the numbers" do
-
+        # Pending
       end
       it "should call the clean_up_stack method" do
-
+        # Pending
       end
       it "should call the enter_number_or_operation method" do
-
+        # Pending
       end
     end
 
     context "when the user enters a *" do
       it "should multiply the numbers" do
-
+        # Pending
       end
       it "should call the clean_up_stack method" do
-
+        # Pending
       end
       it "should call the enter_number_or_operation method" do
-
+        # Pending
       end
     end
 
     context "when the user enters a /" do
       it "should divide the numbers" do
-
+        # Pending
       end
       it "should call the clean_up_stack method" do
-
+        # Pending
       end
       it "should call the enter_number_or_operation method" do
-
+        # Pending
       end
     end
 
     context "when the user doesnt enter a valid operator" do
       it "should call the enter_number_or_operation method" do
-
+        # Pending
       end
     end
   end
