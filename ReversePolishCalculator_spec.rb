@@ -1,5 +1,4 @@
 require './reversepolishcalculator'
-require 'stringio'
 require 'rspec'
 
 RSpec.describe ReversePolishCalculator do
