@@ -73,3 +73,27 @@ class ReversePolishCalculator
   end
 
 end
+
+if __FILE__ == $PROGRAM_NAME
+  puts "Hello!  Thanks for checking out my RPN Calculator.  To give you an idea of how it works, I'm going to walk you through an example."
+  calculator = ReversePolishCalculator.new
+  puts "I am going to add the numbers 5, 10, and 15 to my calculator stack which is currently empty: #{calculator.calculator_array}"
+  calculator.add_number_or_operator("5")
+  calculator.add_number_or_operator("10")
+  calculator.add_number_or_operator("15")
+  puts "Now my calculator stack is: #{calculator.calculator_array}"
+  puts "Now I am going to add the '+' operator."
+  calculator.add_number_or_operator("+")
+  puts "See?  Check out my calculator stack now: #{calculator.calculator_array}"
+  puts "Alright, now to do some math... RPN style!  I'm going to call the perform calculation method which should return 30"
+  p calculator.perform_calculation(calculator.calculator_array)
+  puts "COOL!  Let's add '10' and '15' to the stack......."
+  calculator.add_number_or_operator('10')
+  calculator.add_number_or_operator('15')
+  puts "Calculator stack is now: #{calculator.calculator_array}"
+  puts "Let's do some multiplication!  I'm going to add the '*' sign to the stack and then call perform_calculation again."
+  calculator.add_number_or_operator('*')
+  puts "We've got the '*' in there now!  Going to call the perform_calculation method now, cross your fingers that the output is 4,500."
+  p calculator.perform_calculation(calculator.calculator_array)
+  puts "Oh yeah!  Ready to give it a go yourself?  Start up an IRB session and have some fun!"
+end
