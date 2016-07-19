@@ -9,7 +9,7 @@ class ReversePolishCalculator
   end
 
   def add_number_or_operator(num_or_op)
-    if num_or_op.match('[(\)\+\-\*\/\.]') && calculator_array_length?(@calculator_array)
+    if num_or_op.match('[(\)\+\-\*\/\.]') && calculator_array_length?(@calculator_array) && no_other_operators?(@calculator_array)
       @calculator_array << num_or_op
     end
 
@@ -20,6 +20,10 @@ class ReversePolishCalculator
 
   def calculator_array_length?(calculator_array)
     calculator_array.length >= 3
+  end
+
+  def no_other_operators?(calculator_array)
+    true unless calculator_array.any? { |x| ['+', '-', '*', '/'].include?(x)}
   end
 
   def last_element_operator?(calculator_array)

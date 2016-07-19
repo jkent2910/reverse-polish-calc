@@ -169,6 +169,14 @@ RSpec.describe ReversePolishCalculator do
             expect { calculator.perform_calculation(calculator.calculator_array)}.to raise_error(ArgumentError)
         end
       end
+
+      context "no_other_operators" do
+        it "should not allow more than one operator in the array" do
+          calculator_array = ['1', '2', '3', '+', '-']
+          calculator = ReversePolishCalculator.new(calculator_array)
+          expect(calculator.no_other_operators?(calculator_array)).to be_falsey
+        end
+      end
     end
   end
 
