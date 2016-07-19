@@ -40,56 +40,32 @@ class ReversePolishCalculator
         end
         remove_elements_from_array(calculator_array, calculator_array.length)
         calculator_array << total
-
       elsif calculator_array.last == "-"
-        remove_elements_from_array(calculator_array, 1)
-        numeric_array = calculator_array.map(&:to_i)
-
-        until numeric_array.length == 2 do
-          second_to_last_element = (numeric_array.length - 2)
-          new_total = numeric_array.last - numeric_array[second_to_last_element]
-          remove_elements_from_array(numeric_array, 2)
-          numeric_array << new_total
-        end
-
-        new_total = numeric_array.last - numeric_array.first
-
-        remove_elements_from_array(calculator_array, calculator_array.length)
-        calculator_array << new_total
+        do_math(calculator_array, "-")
       elsif calculator_array.last == "*"
-        remove_elements_from_array(calculator_array, 1)
-        numeric_array = calculator_array.map(&:to_i)
-
-        until numeric_array.length == 2 do
-          second_to_last_element = (numeric_array.length - 2)
-          new_total = numeric_array.last * numeric_array[second_to_last_element]
-          remove_elements_from_array(numeric_array, 2)
-          numeric_array << new_total
-        end
-
-        new_total = numeric_array.last * numeric_array.first
-        remove_elements_from_array(calculator_array, calculator_array.length)
-
-        calculator_array << new_total
-
+        do_math(calculator_array, "*")
       elsif calculator_array.last == "/"
-        remove_elements_from_array(calculator_array, 1)
-        numeric_array = calculator_array.map(&:to_i)
-
-        until numeric_array.length == 2 do
-          second_to_last_element = (numeric_array.length - 2)
-          new_total = numeric_array.last.to_f / numeric_array[second_to_last_element].to_f
-          remove_elements_from_array(numeric_array, 2)
-          numeric_array << new_total
-        end
-
-        new_total = numeric_array.last.to_f / numeric_array.first.to_f
-        remove_elements_from_array(calculator_array, calculator_array.length)
-
-        calculator_array << new_total
+        do_math(calculator_array, "/")
       else
         raise ArgumentError, 'At least three elements are needed with an operator as the last element'
       end
+  end
+
+  def do_math(array, operator)
+    remove_elements_from_array(array, 1)
+    numeric_array = calculator_array.map(&:to_i)
+
+    until numeric_array.length == 2 do
+      second_to_last_element = (numeric_array.length - 2)
+      new_total = numeric_array.last.to_f.send(operator, numeric_array[second_to_last_element].to_f)
+      remove_elements_from_array(numeric_array, 2)
+      numeric_array << new_total
+    end
+
+    new_total = numeric_array.last.to_f.send(operator, numeric_array.first.to_f)
+
+    remove_elements_from_array(array, array.length)
+    array << new_total
   end
   
   def remove_elements_from_array(calculator_array, num_elements)
