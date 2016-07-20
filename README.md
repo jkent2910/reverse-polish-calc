@@ -1,4 +1,4 @@
-# Reverse Reverse Polish Calculator
+# Reverse Polish Calculator
 ## Description: 
 This simple command line calculator will prompt a user to enter numbers (up to 5 digits) and one of four operators (+, -, *, %) to perform Reverse Polish calculations.  If you'd like to learn more about how Reverse Polish calculators work, please see the Wikipedia page: https://en.wikipedia.org/wiki/Reverse_Polish_notation. 
 
