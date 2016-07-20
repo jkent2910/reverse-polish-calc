@@ -15,5 +15,3 @@ To run the tests, run rspec ReversePolishCalculator_spec.rb
 ## Other notes: 
 I would definitely research more into how to design a program to be implemented in different ways (WebSocket, TCP, file, etc.) if I were to spend additional time on this.  I would also try to make it more interactive vs. making the user call methods on their object.
 
-## TODO: 
-Implement 'q' to quit feature.
