@@ -74,6 +74,11 @@ class ReversePolishCalculator
 
 end
 
+def q
+  exit
+end
+
+
 if __FILE__ == $PROGRAM_NAME
   puts "Hello!  Thanks for checking out my RPN Calculator.  To give you an idea of how it works, I'm going to walk you through an example."
   calculator = ReversePolishCalculator.new
