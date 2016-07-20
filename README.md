@@ -13,7 +13,7 @@ Just run ruby ReversePolishCalculator.rb from your terminal.
 To run the tests, run rspec ReversePolishCalculator_spec.rb
 
 ## Other notes: 
-My biggest concern is that I did not do a good job of figuring out a way to abstract I/O to make the code testable.  This resulted in the majority of my tests for the Interactive PolishCalculator.rb class to stay in pending status.  My goal with writing another class with the basic methods was to provide reusable methods that could potentially be used with a Web Socket or other implementation, as well as test the underlying logic.  I would definitely research more into how to design a program to be implemented in different ways (WebSocket, TCP, file, etc.) if I were to spend additional time.  The number of lines also seems a bit much for the PolishCalculator class, so it may make sense to create other Classes as well or condense the code down.  I tried to utilize well named methods and break things into different methods which made the number of lines longer than what I'm sure could be done in about half.  Overall, this was a fun exercise as I had no idea what a Reverse Polish Calculator was (I know, crazy right?) and it gave me good practice writing plain 'ol Ruby without all of the stuff built in with Rails.  I'd also probably just tell people to use a normal calculator...  :-P 
+I would definitely research more into how to design a program to be implemented in different ways (WebSocket, TCP, file, etc.) if I were to spend additional time on this.  I would also try to make it more interactive vs. making the user call methods on their object.
 
 ## TODO: 
 Implement 'q' to quit feature.
